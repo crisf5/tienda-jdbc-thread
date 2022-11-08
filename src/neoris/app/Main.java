@@ -6,6 +6,7 @@ import neoris.app.domain.Categoria;
 import neoris.app.domain.Cliente;
 import neoris.app.domain.Empleado;
 import neoris.app.domain.Producto;
+import neoris.app.domain.Promocion;
 
 public class Main
 {
@@ -35,11 +36,28 @@ public class Main
 //					" - "+ dto.getId_tipo_cliente());
 //		}
 		
-		List<Empleado> empleadosAtienden = facade.obtenerEmpleadosQueAntendieron(2);
-		for(Empleado dto : empleadosAtienden) {
-			System.out.println(dto.getId_empleado()+
-					" - "+dto.getNombre()+
-					" - "+dto.getId_jefe());
+//		List<Empleado> empleadosAtienden = facade.obtenerEmpleadosQueAntendieron(2);
+//		for(Empleado dto : empleadosAtienden) {
+//			System.out.println(dto.getId_empleado()+
+//					" - "+dto.getNombre()+
+//					" - "+dto.getId_jefe());
+//		}
+
+		
+//		FIX THIS
+//		List<Producto> productosPromo = facade.obtenerProductosConPromocionesVigentes();
+//		for(Producto dto: productosPromo) {
+//			System.out.println(dto.getId_producto()+
+//			" - "+dto.getDescripcion()+
+//			" - "+dto.getPrecio_unitario()+
+//			" - "+dto.getUnidades_stock()+
+//			" - "+dto.getFlg_discontinuo());
+//		}
+		
+		List<Promocion> promos = facade.obtenerPromociones(5);
+		for(Promocion dto: promos) {
+			System.out.println(dto.getId_promocion()+
+					" - "+dto.getDescripcion());
 		}
 		
 //		List<Categoria> categorias = facade.obtenerCategorias();
