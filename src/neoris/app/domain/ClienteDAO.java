@@ -9,9 +9,7 @@ public class ClienteDAO
 {
 	MiJdbc db = MiJdbc.getInstance();
 	
-	public List<Cliente> findAll(){
-		
-		List<Object[]> sql = db.query("SELECT * FROM cliente");
+	public List<Cliente> datosCliente(List<Object[]> sql){
 		
 		List<Cliente> listaClientes = new ArrayList<>();
 		
@@ -29,18 +27,22 @@ public class ClienteDAO
 	}
 	
 	
+	public List<Cliente> findAll(){
+		
+		List<Object[]> sql = db.query("SELECT * FROM cliente");
+		
+		List<Cliente> listaClientes = datosCliente(sql);
+		
+		return listaClientes;
+	}
+	
+	
 	public List<Cliente> obtenerClientesQueAdquirieron(int idProducto){
 		
 		List<Object[]> sql = db.query("");
 		
-		List<Cliente> listaClientes = new ArrayList<>();
+		List<Cliente> listaClientes = datosCliente(sql);
 		
-		for(Object[]fila : sql) {
-			Cliente list = new Cliente();
-			
-			
-		}
-		
-		return null;
+		return listaClientes;
 	}
 }

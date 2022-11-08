@@ -20,15 +20,15 @@ public class Main
 //		}
 		 
 		
-//		List<Cliente> clientes = facade.obtenerClientes();
-//		for(Cliente dto:clientes)
-//		{
-//			System.out.println(dto.getId_cliente()+
-//					" - "+ dto.getId_usuario()+
-//					" - "+ dto.getNombre()+
-//					" - "+ dto.getDireccion()+
-//					" - "+ dto.getId_tipo_cliente());
-//		}
+		List<Cliente> clientes = facade.obtenerClientes();
+		for(Cliente dto:clientes)
+		{
+			System.out.println(dto.getId_cliente()+
+					" - "+ dto.getId_usuario()+
+					" - "+ dto.getNombre()+
+					" - "+ dto.getDireccion()+
+					" - "+ dto.getId_tipo_cliente());
+		}
 		
 //		List<Categoria> categorias = facade.obtenerCategorias();
 //		for(Categoria dto:categorias) {
