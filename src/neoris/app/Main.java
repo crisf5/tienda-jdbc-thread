@@ -27,14 +27,14 @@ public class Main
 //		}
 		
 		
-		List<Cliente> clientes = facade.obtenerClientesQueAdquirieron(4);
-		for(Cliente dto: clientes) {
-			System.out.println(dto.getId_cliente()+
-			" - "+ dto.getId_usuario()+
-			" - "+ dto.getNombre()+
-			" - "+ dto.getDireccion()+
-			" - "+ dto.getId_tipo_cliente());
-		}
+//		List<Cliente> clientes = facade.obtenerClientesQueAdquirieron(4);
+//		for(Cliente dto: clientes) {
+//			System.out.println(dto.getId_cliente()+
+//			" - "+ dto.getId_usuario()+
+//			" - "+ dto.getNombre()+
+//			" - "+ dto.getDireccion()+
+//			" - "+ dto.getId_tipo_cliente());
+//		}
 		
 		
 //		List<Cliente> clientes = facade.obtenerClientes();
@@ -57,14 +57,11 @@ public class Main
 
 		
 //		FIX THIS******************
-//		List<Producto> productosPromo = facade.obtenerProductosConPromocionesVigentes();
-//		for(Producto dto: productosPromo) {
-//			System.out.println(dto.getId_producto()+
-//			" - "+dto.getDescripcion()+
-//			" - "+dto.getPrecio_unitario()+
-//			" - "+dto.getUnidades_stock()+
-//			" - "+dto.getFlg_discontinuo());
-//		}
+		List<Producto> productosPromo = facade.obtenerProductosConPromocionesVigentes();
+		for(Producto dto: productosPromo) {
+			System.out.println(dto.getId_producto()+
+			" - "+dto.getDescripcion());
+		}
 		
 		
 //		List<Promocion> promos = facade.obtenerPromociones(5);

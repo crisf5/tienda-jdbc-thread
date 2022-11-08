@@ -44,7 +44,8 @@ public class ProductoDAO
 		
 		List<Object[]> sql = db.query(""
 				+ "SELECT p.* FROM producto p, promocion_producto d, promocion_vigencia v "
-				+ "WHERE v.id_promocion_vigencia = d.id_promocion_vigencia "
+				+ "WHERE v.fecha_fin > CURRENT_DATE "
+				+ "AND v.id_promocion_vigencia = d.id_promocion_vigencia "
 				+ "AND d.id_producto = p.id_producto");
 		
 		List<Producto> listaProductos = datosProducto(sql);
