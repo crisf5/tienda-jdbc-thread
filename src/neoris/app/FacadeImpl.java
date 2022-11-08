@@ -4,6 +4,7 @@ import java.util.List;
 
 import neoris.app.domain.Categoria;
 import neoris.app.domain.Cliente;
+import neoris.app.domain.ClienteDAO;
 import neoris.app.domain.Empleado;
 import neoris.app.domain.Producto;
 import neoris.app.domain.ProductoDAO;
@@ -30,8 +31,8 @@ public class FacadeImpl implements Facade
 	@Override
 	public List<Cliente> obtenerClientes()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		ClienteDAO cliente = new ClienteDAO();
+		return cliente.findAll();
 	}
 
 	@Override
