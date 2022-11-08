@@ -11,11 +11,11 @@ public class ProductoDAO
 	
 	public List<Producto> findAll(){
 		
-		List<Object[]> productosQuery = db.query("SELECT * FROM producto");
+		List<Object[]> sql = db.query("SELECT * FROM producto");
 		
 		List<Producto> listaProductos = new ArrayList<>();
 		
-		for(Object[] fila : productosQuery) {
+		for(Object[] fila : sql) {
 			Producto list = new Producto();
 			list.setId_product((Integer)fila[0]);
 			list.setDescripcion((String)fila[1]);

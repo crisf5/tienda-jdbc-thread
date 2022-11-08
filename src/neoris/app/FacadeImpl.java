@@ -3,6 +3,7 @@ package neoris.app;
 import java.util.List;
 
 import neoris.app.domain.Categoria;
+import neoris.app.domain.CategoriaDAO;
 import neoris.app.domain.Cliente;
 import neoris.app.domain.ClienteDAO;
 import neoris.app.domain.Empleado;
@@ -59,8 +60,8 @@ public class FacadeImpl implements Facade
 	@Override
 	public List<Categoria> obtenerCategorias()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		CategoriaDAO categoria = new CategoriaDAO();
+		return categoria.findAll();
 	}
 
 	@Override
