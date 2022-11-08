@@ -11,7 +11,10 @@ public class ProveedorDAO
 	
 	public List<Proveedor> obtenerProveedores(int idCategoria){
 		
-		List<Object[]> sql = db.query("");
+		List<Object[]> sql = db.query(""
+				+ "SELECT p.* FROM proveedor p, proveedor_categoria c "
+				+ "WHERE c.id_categoria = ? "
+				+ "AND c.id_proveedor = p.id_proveedor",idCategoria);
 		
 		List<Proveedor> listaProveedor = new ArrayList<>();
 		
