@@ -4,6 +4,7 @@ import java.util.List;
 
 import neoris.app.domain.Categoria;
 import neoris.app.domain.Cliente;
+import neoris.app.domain.Empleado;
 import neoris.app.domain.Producto;
 
 public class Main
@@ -14,14 +15,14 @@ public class Main
 		Facade facade = new FacadeImpl();
 		
 		
-		List<Producto> productos = facade.obtenerProductos(); 
-		for(Producto dto:productos) {
-			System.out.println(dto.getId_producto()+
-					" - "+dto.getDescripcion()+
-					" - "+dto.getPrecio_unitario()+
-					" - "+dto.getUnidades_stock()+
-					" - "+dto.getFlg_discontinuo());
-		}
+//		List<Producto> productos = facade.obtenerProductos(); 
+//		for(Producto dto:productos) {
+//			System.out.println(dto.getId_producto()+
+//					" - "+dto.getDescripcion()+
+//					" - "+dto.getPrecio_unitario()+
+//					" - "+dto.getUnidades_stock()+
+//					" - "+dto.getFlg_discontinuo());
+//		}
 		 
 		
 //		List<Cliente> clientes = facade.obtenerClientes();
@@ -33,6 +34,13 @@ public class Main
 //					" - "+ dto.getDireccion()+
 //					" - "+ dto.getId_tipo_cliente());
 //		}
+		
+		List<Empleado> empleadosAtienden = facade.obtenerEmpleadosQueAntendieron(2);
+		for(Empleado dto : empleadosAtienden) {
+			System.out.println(dto.getId_empleado()+
+					" - "+dto.getNombre()+
+					" - "+dto.getId_jefe());
+		}
 		
 //		List<Categoria> categorias = facade.obtenerCategorias();
 //		for(Categoria dto:categorias) {

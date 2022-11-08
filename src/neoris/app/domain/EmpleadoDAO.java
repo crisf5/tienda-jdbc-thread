@@ -1,5 +1,6 @@
 package neoris.app.domain;
 
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +12,11 @@ public class EmpleadoDAO
 	
 	public List<Empleado> obtenerEmpleadosQueAntendieron(int idCliente){
 		
-		List<Object[]> sql = db.query("");
-		
+		List<Object[]> sql = db.query(""
+				+ "SELECT e.* FROM empleado e, orden o "
+				+ "WHERE o.id_cliente = ? "
+				+ "AND e.id_empleado = o.id_empleado",idCliente);
+				
 		List<Empleado> listaEmpleados = new ArrayList<>();
 		
 		for(Object[] fila : sql) {
