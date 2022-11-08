@@ -2,6 +2,7 @@ package neoris.app;
 
 import java.util.List;
 
+import Thread.StockProductosThread;
 import neoris.app.domain.Categoria;
 import neoris.app.domain.CategoriaDAO;
 import neoris.app.domain.Cliente;
@@ -77,7 +78,8 @@ public class FacadeImpl implements Facade
 	@Override
 	public void generarReposicionProducto()
 	{
-		// TODO Auto-generated method stub
+		StockProductosThread stock = new StockProductosThread();
+		stock.start();
 		
 	}
 	

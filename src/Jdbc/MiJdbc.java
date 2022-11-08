@@ -140,6 +140,43 @@ public class MiJdbc
 	// insert, update y delete
 	public int update(String sql,Object ...params)
 	{
-		return 0;
+		PreparedStatement pstm = null;
+		int rs = 0;
+		
+		try
+		{
+			// preparo la sentencia
+			pstm = con.prepareStatement(sql);
+
+			// seteo los parametros
+			for(int i=0; i<params.length;i++)
+			{
+				pstm.setObject(i+1,params[i]);
+			}
+
+			// ejecuto el query
+			rs = pstm.executeUpdate();
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+		finally
+		{
+			try
+			{
+			
+				if( pstm!=null ) pstm.close();
+			}
+			catch(Exception e2)
+			{
+				e2.printStackTrace();
+				throw new RuntimeException(e2);
+			}
+		}		
+		
+		return rs;
 	}
 }

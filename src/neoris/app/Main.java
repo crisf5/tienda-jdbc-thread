@@ -2,6 +2,7 @@ package neoris.app;
 
 import java.util.List;
 
+import Thread.StockProductosThread;
 import neoris.app.domain.Categoria;
 import neoris.app.domain.Cliente;
 import neoris.app.domain.Empleado;
@@ -56,12 +57,11 @@ public class Main
 //		}
 
 		
-//		FIX THIS******************
-		List<Producto> productosPromo = facade.obtenerProductosConPromocionesVigentes();
-		for(Producto dto: productosPromo) {
-			System.out.println(dto.getId_producto()+
-			" - "+dto.getDescripcion());
-		}
+//		List<Producto> productosPromo = facade.obtenerProductosConPromocionesVigentes();
+//		for(Producto dto: productosPromo) {
+//			System.out.println(dto.getId_producto()+
+//			" - "+dto.getDescripcion());
+//		}
 		
 		
 //		List<Promocion> promos = facade.obtenerPromociones(5);
@@ -86,6 +86,8 @@ public class Main
 //					" - "+ dto.getContacto());
 //		}
 		
+		StockProductosThread hilo = new StockProductosThread();
+		hilo.start();
 	}
 
 }
