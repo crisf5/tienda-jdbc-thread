@@ -7,10 +7,13 @@ import neoris.app.domain.CategoriaDAO;
 import neoris.app.domain.Cliente;
 import neoris.app.domain.ClienteDAO;
 import neoris.app.domain.Empleado;
+import neoris.app.domain.EmpleadoDAO;
 import neoris.app.domain.Producto;
 import neoris.app.domain.ProductoDAO;
 import neoris.app.domain.Promocion;
+import neoris.app.domain.PromocionDAO;
 import neoris.app.domain.Proveedor;
+import neoris.app.domain.ProveedorDAO;
 
 public class FacadeImpl implements Facade
 {
@@ -25,8 +28,8 @@ public class FacadeImpl implements Facade
 	@Override
 	public List<Cliente> obtenerClientesQueAdquirieron(int idProducto)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		ClienteDAO cliente = new ClienteDAO();
+		return cliente.obtenerClientesQueAdquirieron(idProducto);
 	}
 
 	@Override
@@ -39,22 +42,22 @@ public class FacadeImpl implements Facade
 	@Override
 	public List<Empleado> obtenerEmpleadosQueAntendieron(int idCliente)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		EmpleadoDAO empleado = new EmpleadoDAO();		
+		return empleado.obtenerEmpleadosQueAntendieron(idCliente);
 	}
 
 	@Override
 	public List<Producto> obtenerProductosConPromocionesVigentes()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		ProductoDAO producto = new ProductoDAO();
+		return producto.obtenerProductosConPromocionesVigentes();
 	}
 
 	@Override
 	public List<Promocion> obtenerPromociones(int idProducto)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		PromocionDAO promocion = new PromocionDAO();
+		return promocion.obtenerPromociones(idProducto);
 	}
 
 	@Override
@@ -67,8 +70,8 @@ public class FacadeImpl implements Facade
 	@Override
 	public List<Proveedor> obtenerProveedores(int idCategoria)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		ProveedorDAO proveedor = new ProveedorDAO();
+		return proveedor.obtenerProveedores(idCategoria);
 	}
 
 	@Override

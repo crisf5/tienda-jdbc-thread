@@ -14,21 +14,25 @@ public class Main
 		Facade facade = new FacadeImpl();
 		
 		
-//		List<Producto> productos = facade.obtenerProductos(); 
-//		for(Producto dto:productos) {
-//			System.out.println(dto.getId_producto()+" - "+dto.getDescripcion());
-//		}
+		List<Producto> productos = facade.obtenerProductos(); 
+		for(Producto dto:productos) {
+			System.out.println(dto.getId_producto()+
+					" - "+dto.getDescripcion()+
+					" - "+dto.getPrecio_unitario()+
+					" - "+dto.getUnidades_stock()+
+					" - "+dto.getFlg_discontinuo());
+		}
 		 
 		
-		List<Cliente> clientes = facade.obtenerClientes();
-		for(Cliente dto:clientes)
-		{
-			System.out.println(dto.getId_cliente()+
-					" - "+ dto.getId_usuario()+
-					" - "+ dto.getNombre()+
-					" - "+ dto.getDireccion()+
-					" - "+ dto.getId_tipo_cliente());
-		}
+//		List<Cliente> clientes = facade.obtenerClientes();
+//		for(Cliente dto:clientes)
+//		{
+//			System.out.println(dto.getId_cliente()+
+//					" - "+ dto.getId_usuario()+
+//					" - "+ dto.getNombre()+
+//					" - "+ dto.getDireccion()+
+//					" - "+ dto.getId_tipo_cliente());
+//		}
 		
 //		List<Categoria> categorias = facade.obtenerCategorias();
 //		for(Categoria dto:categorias) {

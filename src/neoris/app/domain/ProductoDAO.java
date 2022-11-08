@@ -9,9 +9,7 @@ public class ProductoDAO
 {
 	MiJdbc db = MiJdbc.getInstance();
 	
-	public List<Producto> findAll(){
-		
-		List<Object[]> sql = db.query("SELECT * FROM producto");
+	public List<Producto> datosProducto(List<Object[]> sql){
 		
 		List<Producto> listaProductos = new ArrayList<>();
 		
@@ -32,4 +30,22 @@ public class ProductoDAO
 		return listaProductos;
 	}
 	
+	public List<Producto> findAll(){
+		
+		List<Object[]> sql = db.query("SELECT * FROM producto");
+		
+		List<Producto> listaProductos = datosProducto(sql);
+		
+		return listaProductos;
+	}
+	
+	
+	public List<Producto> obtenerProductosConPromocionesVigentes(){
+		
+		List<Object[]> sql = db.query("");
+		
+		List<Producto> listaProductos = datosProducto(sql);
+		
+		return listaProductos;
+	}
 }
