@@ -2,7 +2,7 @@ package neoris.app.domain;
 
 public class Producto
 {
-	private Integer id_product;
+	private Integer id_producto;
 	private String descripcion;
 	private Integer id_proveedor;
 	private Integer id_categoria;
@@ -12,13 +12,13 @@ public class Producto
 	private Integer unidades_stock_maximo;
 	private Integer flg_discontinuo;
 	
-	public Integer getId_product()
+	public Integer getId_producto()
 	{
-		return id_product;
+		return id_producto;
 	}
-	public void setId_product(Integer id_product)
+	public void setId_product(Integer id_producto)
 	{
-		this.id_product=id_product;
+		this.id_producto=id_producto;
 	}
 	public String getDescripcion()
 	{

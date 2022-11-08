@@ -6,6 +6,7 @@ import neoris.app.domain.Categoria;
 import neoris.app.domain.Cliente;
 import neoris.app.domain.Empleado;
 import neoris.app.domain.Producto;
+import neoris.app.domain.ProductoDAO;
 import neoris.app.domain.Promocion;
 import neoris.app.domain.Proveedor;
 
@@ -15,8 +16,8 @@ public class FacadeImpl implements Facade
 	@Override
 	public List<Producto> obtenerProductos()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		ProductoDAO producto = new ProductoDAO();
+		return producto.findAll();
 	}
 
 	@Override
