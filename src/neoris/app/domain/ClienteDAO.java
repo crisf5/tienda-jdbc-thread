@@ -39,7 +39,11 @@ public class ClienteDAO
 	
 	public List<Cliente> obtenerClientesQueAdquirieron(int idProducto){
 		
-		List<Object[]> sql = db.query("");
+		List<Object[]> sql = db.query(""
+				+ "SELECT c.* FROM cliente c, orden o, detalle_orden d "
+				+ "WHERE d.id_producto = ? "
+				+ "AND d.id_orden = o.id_orden "
+				+ "AND o.id_cliente = c.id_cliente",idProducto);
 		
 		List<Cliente> listaClientes = datosCliente(sql);
 		

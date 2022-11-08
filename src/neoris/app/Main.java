@@ -25,7 +25,17 @@ public class Main
 //					" - "+dto.getUnidades_stock()+
 //					" - "+dto.getFlg_discontinuo());
 //		}
-		 
+		
+		
+		List<Cliente> clientes = facade.obtenerClientesQueAdquirieron(4);
+		for(Cliente dto: clientes) {
+			System.out.println(dto.getId_cliente()+
+			" - "+ dto.getId_usuario()+
+			" - "+ dto.getNombre()+
+			" - "+ dto.getDireccion()+
+			" - "+ dto.getId_tipo_cliente());
+		}
+		
 		
 //		List<Cliente> clientes = facade.obtenerClientes();
 //		for(Cliente dto:clientes)
@@ -36,6 +46,7 @@ public class Main
 //					" - "+ dto.getDireccion()+
 //					" - "+ dto.getId_tipo_cliente());
 //		}
+		
 		
 //		List<Empleado> empleadosAtienden = facade.obtenerEmpleadosQueAntendieron(2);
 //		for(Empleado dto : empleadosAtienden) {
@@ -55,11 +66,13 @@ public class Main
 //			" - "+dto.getFlg_discontinuo());
 //		}
 		
+		
 //		List<Promocion> promos = facade.obtenerPromociones(5);
 //		for(Promocion dto: promos) {
 //			System.out.println(dto.getId_promocion()+
 //					" - "+dto.getDescripcion());
 //		}
+		
 		
 //		List<Categoria> categorias = facade.obtenerCategorias();
 //		for(Categoria dto:categorias) {
@@ -67,13 +80,14 @@ public class Main
 //					" - "+ dto.getDescripcion());
 //		}
 		
-		List<Proveedor> proveedores = facade.obtenerProveedores(3);
-		for(Proveedor dto: proveedores) {
-			System.out.println(dto.getId_proveedor()+
-					" - "+ dto.getEmpresa()+
-					" - "+ dto.getDireccion()+
-					" - "+ dto.getContacto());
-		}
+		
+//		List<Proveedor> proveedores = facade.obtenerProveedores(3);
+//		for(Proveedor dto: proveedores) {
+//			System.out.println(dto.getId_proveedor()+
+//					" - "+ dto.getEmpresa()+
+//					" - "+ dto.getDireccion()+
+//					" - "+ dto.getContacto());
+//		}
 		
 	}
 
